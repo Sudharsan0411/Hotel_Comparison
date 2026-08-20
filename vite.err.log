@@ -1,0 +1,21 @@
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: "127.0.0.1",
+    proxy: {
+      "/ranked-hotels": "http://127.0.0.1:3002",
+      "/ml-health": "http://127.0.0.1:3002",
+      "/recommendations": "http://127.0.0.1:3002",
+      "/track-event": "http://127.0.0.1:3002",
+      "/hotels": "http://127.0.0.1:3002",
+      "/search": "http://127.0.0.1:3002",
+      "/filter": "http://127.0.0.1:3002",
+      "/login": "http://127.0.0.1:3002",
+      "/signup": "http://127.0.0.1:3002",
+      "/alerts": "http://127.0.0.1:3002"
+    }
+  }
+});
